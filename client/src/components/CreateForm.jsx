@@ -54,7 +54,7 @@ export default class CreateForm extends Component {
           id='url'
           placeholder='url'
         />
-        <input type='submit' />
+        <input type='submit' value='Add bookmark' />
       </form>
     )
   }
