@@ -28,15 +28,16 @@ export default class UpdateForm extends Component {
     })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    this.updateData();
-    this.props.fetchdata();
+    await this.updateData();
+    await this.props.fetchdata();
+    this.props.toggleEdit();
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
+    return this.props.edit ? (
+      <form className='toggle' onSubmit={this.handleSubmit}>
         <input
           type='text'
           value={this.state.title}
@@ -51,6 +52,6 @@ export default class UpdateForm extends Component {
         />
         <input type='submit' />
       </form>
-    )
+    ) : ''
   }
 }

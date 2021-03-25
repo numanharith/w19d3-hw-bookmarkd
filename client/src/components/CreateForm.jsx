@@ -6,7 +6,7 @@ export default class CreateForm extends Component {
     super(props)
     this.state = {
       title: '',
-      url: ''     
+      url: '',
     }
   }
   
@@ -20,7 +20,7 @@ export default class CreateForm extends Component {
     try {
       const response = await axios.post('/bookmarks', {
         title: this.state.title,
-        url: this.state.url
+        url: this.state.url,
       });
       this.props.fetchdata();
     } catch (err) {
